@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="square" th:each="car : ${carList}">
+    <div class="square">
         <img th:src="@{'/img/' + ${car.image}}" alt="Car Image"/>
         <div>
             <label>ID:</label>
@@ -35,19 +35,7 @@
             <span th:text="${car.licenseplate}">Licenseplate</span>
         </div>
     </div>
-</div>
-<div class="buttons">
-    <a th:href="@{/getCreateCar}" method="get" class="btn">Create</a>
-    <div class="modify-forms">
-        <form th:action="@{/showcar}" method="get" class="modify-form">
-            <input type="number" name="id" placeholder="Enter car ID to read" required>
-            <button type="submit" class="btn">Read</button>
-        </form>
-        <form th:action="@{/deletecar}" method="post" class="modify-form">
-            <input type="number" name="id" placeholder="Enter car ID to delete" required>
-            <button type="submit" class="btn">Delete</button>
-        </form>
-    </div>
+    <a th:href="@{/}" class="btn">Back</a>
 </div>
 
 

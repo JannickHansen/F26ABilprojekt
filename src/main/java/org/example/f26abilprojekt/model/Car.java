@@ -20,6 +20,15 @@ public class Car {
         this.image = image;
     }
 
+    public Car(String brand, int modelyear, String type, String colour, String licenseplate, String image) {
+        this.brand = brand;
+        this.modelyear = modelyear;
+        this.type = type;
+        this.colour = colour;
+        this.licenseplate = licenseplate;
+        this.image = image;
+    }
+
     public int getId() {
         return id;
     }
