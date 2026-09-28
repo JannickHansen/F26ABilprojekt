@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MainPage</title>
+    <link rel="stylesheet" th:href="@{style.css}">
+</head>
+<body>
+<div class="container">
+    <div class="square" th:each="car : ${carList}">
+        <img th:src="@{'/img/' + ${car.image}}" alt="Car Image"/>
+        <div>
+            <label>ID:</label>
+            <span th:text="${car.id}">ID</span>
+        </div>
+        <div>
+            <label>Brand:</label>
+            <span th:text="${car.brand}">Brand</span>
+        </div>
+        <div>
+            <label>Modelyear:</label>
+            <span th:text="${car.modelyear}">Modelyear</span>
+        </div>
+        <div>
+            <label>Type:</label>
+            <span th:text="${car.type}">Type</span>
+        </div>
+        <div>
+            <label>Color:</label>
+            <span th:text="${car.colour}">Color</span>
+        </div>
+        <div>
+            <label>Licenseplate:</label>
+            <span th:text="${car.licenseplate}">Licenseplate</span>
+        </div>
+    </div>
+</div>
