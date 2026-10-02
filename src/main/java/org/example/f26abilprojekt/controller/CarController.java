@@ -1,6 +1,7 @@
 package org.example.f26abilprojekt.controller;
 
 import org.example.f26abilprojekt.model.Car;
+import org.example.f26abilprojekt.repository.CarRepository;
 import org.example.f26abilprojekt.repository.CarRepositorySTUB;
 import org.example.f26abilprojekt.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +15,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class CarController {
 
     @Autowired
-    CarRepositorySTUB carRepo;
+    CarRepository carRepo;
+
+    @Autowired
+    CarRepositorySTUB carRepo2;
 
     @Autowired
     CarService carService;
 
     @GetMapping("/showcar")
     public String showCar(@RequestParam("id") int id, Model model) {
-        Car car = carRepo.getCarByID(id);
-        model.addAttribute(car);
+        //Car car = carRepo.getCarByID(id);
+        //model.addAttribute(car);
 
         return "showcar";
     }

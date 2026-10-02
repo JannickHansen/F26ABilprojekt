@@ -2,6 +2,7 @@ package org.example.f26abilprojekt.controller;
 
 import org.example.f26abilprojekt.config.InitData;
 import org.example.f26abilprojekt.model.Car;
+import org.example.f26abilprojekt.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +14,12 @@ import java.util.ArrayList;
 public class PageController {
 
     @Autowired
-    InitData initData;
+    CarRepository carRepo;
 
     @GetMapping("/")
     public String mainPage(Model model) {
-        ArrayList<Car> carlist = new ArrayList<>();
-        carlist.addAll(initData.getCarList());
+        ArrayList<Car> carlist;
+        carlist = carRepo.getAllCars();
         model.addAttribute("carList", carlist);
         return "index";
     }
